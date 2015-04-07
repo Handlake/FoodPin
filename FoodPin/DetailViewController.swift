@@ -30,7 +30,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-        self.restaurantImageView.image = UIImage(named: restaurant.image)
+        self.restaurantImageView.image = UIImage(data: restaurant.image)
         self.title = restaurant.name
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -66,7 +66,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been there"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes" : "No"
+            cell.valueLabel.text = (restaurant.isVisited.boolValue) ? "Yes" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

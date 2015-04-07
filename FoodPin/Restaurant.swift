@@ -2,32 +2,20 @@
 //  Restaurant.swift
 //  FoodPin
 //
-//  Created by Cayden on 2015. 3. 20..
+//  Created by Cayden on 2015. 4. 3..
 //  Copyright (c) 2015년 story-ios. All rights reserved.
 //
 
 import Foundation
+import CoreData
+import UIKit
 
+class Restaurant: NSManagedObject {
 
-class Restaurant  {
-    var name:String? = ""
-    var type:String = ""
-    var location:String?
-    var image:String = ""
-    var isVisited:Bool = false
-    
-    init() {
-        
-    }
-    
-    init(name:String, type:String, location:String, image:String, isVisited:Bool)
-    {
-        self.name = name
-        self.type = type
-        self.location = location
-        self.image = image
-        self.isVisited = isVisited
-        
-        
-    }
+    @NSManaged var isVisited: NSNumber
+    @NSManaged var image: NSData
+    @NSManaged var location: String
+    @NSManaged var name: String
+    @NSManaged var type: String
+
 }
